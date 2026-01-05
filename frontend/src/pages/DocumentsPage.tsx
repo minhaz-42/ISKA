@@ -289,7 +289,7 @@ export function DocumentsPage(props: {
               <label className="block">
                 <div className="text-[13px] text-slate-300">Content</div>
                 <textarea
-                  className="pkf-focus mt-2 min-h-[140px] w-full resize-y rounded-xl bg-white/5 px-3 py-2 text-[14px] text-slate-100 ring-1 ring-(--pkf-border) placeholder:text-slate-500"
+                  className="pkf-focus mt-2 min-h-35 w-full resize-y rounded-xl bg-white/5 px-3 py-2 text-[14px] text-slate-100 ring-1 ring-(--pkf-border) placeholder:text-slate-500"
                   value={pasteContent}
                   onChange={(e) => {
                     setPasteContent(e.target.value)

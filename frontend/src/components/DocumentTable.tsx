@@ -22,7 +22,7 @@ export function DocumentTable(props: { docs: Document[] }) {
       </div>
 
       <div className="mt-4 overflow-auto rounded-2xl">
-        <table className="min-w-[860px] w-full border-separate border-spacing-0">
+        <table className="min-w-215 w-full border-separate border-spacing-0">
           <thead className="sticky top-0 z-10">
             <tr>
               <th className="bg-[#0b0f14]/80 backdrop-blur px-5 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-400 ring-1 ring-white/5">
@@ -51,7 +51,7 @@ export function DocumentTable(props: { docs: Document[] }) {
               return (
                 <tr key={d.id} className="transition hover:bg-white/5">
                   <td className="px-5 py-3 align-top text-sm">
-                    <div className="max-w-[520px] truncate" title={d.title || 'Untitled'}>
+                    <div className="max-w-130 truncate" title={d.title || 'Untitled'}>
                       {d.title || 'Untitled'}
                     </div>
                   </td>

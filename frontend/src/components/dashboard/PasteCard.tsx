@@ -109,7 +109,7 @@ export function PasteCard() {
         <label className="block">
           <span className="text-sm text-slate-300">Content</span>
           <textarea
-            className="mt-2 min-h-[160px] w-full resize-y rounded-xl bg-white/5 px-3 py-2 text-sm text-slate-100 ring-1 ring-white/10 outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-cyan-300/40"
+            className="mt-2 min-h-40 w-full resize-y rounded-xl bg-white/5 px-3 py-2 text-sm text-slate-100 ring-1 ring-white/10 outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-cyan-300/40"
             value={content}
             onChange={(e) => {
               setContent(e.target.value)
@@ -125,7 +125,7 @@ export function PasteCard() {
 
         <button
           type="submit"
-          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-2.5 text-sm font-semibold text-slate-100 ring-1 ring-white/10 transition hover:bg-white/15 active:translate-y-[1px] disabled:opacity-60"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-2.5 text-sm font-semibold text-slate-100 ring-1 ring-white/10 transition hover:bg-white/15 active:translate-y-px disabled:opacity-60"
           disabled={isBusy}
         >
           {isBusy ? (
