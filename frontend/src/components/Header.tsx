@@ -12,7 +12,7 @@ export function Header(props: { apiBaseUrl: string }) {
       <div className="relative flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="inline-flex items-center gap-3">
-            <div className="pkf-ring inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-400/20 to-red-500/20 p-2 text-orange-200">
+            <div className="pkf-ring inline-flex items-center justify-center rounded-xl bg-linear-to-br from-orange-400/20 to-red-500/20 p-2 text-orange-200">
               <Shield className="h-5 w-5" />
             </div>
             <h1 className="text-2xl font-semibold tracking-tight">Personal Knowledge Firewall</h1>

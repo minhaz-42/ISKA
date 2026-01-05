@@ -11,29 +11,29 @@ interface ReadingSignalBadgeProps {
 
 const signalStyles: Record<SignalType, { bg: string; text: string; dot: string }> = {
   pattern: {
-    bg: 'bg-[var(--pkf-warning-subtle)]',
-    text: 'text-[var(--pkf-warning)]',
-    dot: 'bg-[var(--pkf-warning)]',
+    bg: 'bg-(--pkf-warning-subtle))',
+    text: 'text-(--pkf-warning))',
+    dot: 'bg-(--pkf-warning))',
   },
   ai: {
-    bg: 'bg-[var(--pkf-secondary-subtle)]',
-    text: 'text-[var(--pkf-secondary)]',
-    dot: 'bg-[var(--pkf-secondary)]',
+    bg: 'bg-(--pkf-secondary-subtle))',
+    text: 'text-(--pkf-secondary))',
+    dot: 'bg-(--pkf-secondary))',
   },
   repetition: {
-    bg: 'bg-[var(--pkf-info-subtle)]',
-    text: 'text-[var(--pkf-info)]',
-    dot: 'bg-[var(--pkf-info)]',
+    bg: 'bg-(--pkf-info-subtle))',
+    text: 'text-(--pkf-info))',
+    dot: 'bg-(--pkf-info))',
   },
   density: {
-    bg: 'bg-[var(--pkf-overlay)]',
-    text: 'text-[var(--pkf-text-muted)]',
-    dot: 'bg-[var(--pkf-text-subtle)]',
+    bg: 'bg-(--pkf-overlay)',
+    text: 'text-(--pkf-text-muted)',
+    dot: 'bg-(--pkf-text-subtle)',
   },
   neutral: {
-    bg: 'bg-[var(--pkf-overlay)]',
-    text: 'text-[var(--pkf-text-muted)]',
-    dot: 'bg-[var(--pkf-text-subtle)]',
+    bg: 'bg-(--pkf-overlay)',
+    text: 'text-(--pkf-text-muted)',
+    dot: 'bg-(--pkf-text-subtle)',
   },
 }
 

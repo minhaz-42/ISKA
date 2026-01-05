@@ -2,10 +2,10 @@ import React from 'react'
 import type { Document } from '../services/types'
 
 function chipTone(label: string): string {
-  if (label.includes('ai')) return 'bg-white/5 text-[var(--pkf-secondary)] ring-[var(--pkf-border)]'
-  if (label.includes('contrad')) return 'bg-white/5 text-[var(--pkf-attention)] ring-[var(--pkf-border)]'
-  if (label.includes('redundan') || label.includes('repeat')) return 'bg-white/5 text-[var(--pkf-neutral)] ring-[var(--pkf-border)]'
-  return 'bg-white/5 text-slate-300 ring-[var(--pkf-border)]'
+  if (label.includes('ai')) return 'bg-white/5 text-(--pkf-secondary)) ring-(--pkf-border)'
+  if (label.includes('contrad')) return 'bg-white/5 text-(--pkf-attention)) ring-(--pkf-border)'
+  if (label.includes('redundan') || label.includes('repeat')) return 'bg-white/5 text-(--pkf-neutral)) ring-(--pkf-border)'
+  return 'bg-white/5 text-slate-300 ring-(--pkf-border)'
 }
 
 function makeInsightSummary(d: Document): { title: string; why: string; tags: string[] } {
@@ -155,12 +155,12 @@ export function DocumentsPage(props: {
                     onChange={(e) => setUploadType(e.target.value as typeof uploadType)}
                     disabled={uploadStatus === 'processing'}
                   >
-                    <option value="auto" className="bg-[var(--pkf-surface)]">auto (detect)</option>
-                    <option value="pdf" className="bg-[var(--pkf-surface)]">pdf</option>
-                    <option value="docx" className="bg-[var(--pkf-surface)]">docx</option>
-                    <option value="html" className="bg-[var(--pkf-surface)]">html</option>
-                    <option value="text" className="bg-[var(--pkf-surface)]">text</option>
-                    <option value="markdown" className="bg-[var(--pkf-surface)]">markdown</option>
+                    <option value="auto" className="bg-(--pkf-surface)">auto (detect)</option>
+                    <option value="pdf" className="bg-(--pkf-surface)">pdf</option>
+                    <option value="docx" className="bg-(--pkf-surface)">docx</option>
+                    <option value="html" className="bg-(--pkf-surface)">html</option>
+                    <option value="text" className="bg-(--pkf-surface)">text</option>
+                    <option value="markdown" className="bg-(--pkf-surface)">markdown</option>
                   </select>
                   {/* Calm design note: no warnings; only a gentle tip */}
                   <div className="mt-2 text-[12px] text-slate-400">Tip: use auto to detect PDF, DOCX, HTML, Markdown, Text.</div>
@@ -243,11 +243,11 @@ export function DocumentsPage(props: {
                     onChange={(e) => setPasteType(e.target.value as typeof pasteType)}
                     disabled={pasteStatus === 'processing'}
                   >
-                    <option value="web" className="bg-[var(--pkf-surface)]">web</option>
-                    <option value="social" className="bg-[var(--pkf-surface)]">social</option>
-                    <option value="text" className="bg-[var(--pkf-surface)]">text</option>
-                    <option value="markdown" className="bg-[var(--pkf-surface)]">markdown</option>
-                    <option value="html" className="bg-[var(--pkf-surface)]">html</option>
+                    <option value="web" className="bg-(--pkf-surface)">web</option>
+                    <option value="social" className="bg-(--pkf-surface)">social</option>
+                    <option value="text" className="bg-(--pkf-surface)">text</option>
+                    <option value="markdown" className="bg-(--pkf-surface)">markdown</option>
+                    <option value="html" className="bg-(--pkf-surface)">html</option>
                   </select>
                 </label>
 

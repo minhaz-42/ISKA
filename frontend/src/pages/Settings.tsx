@@ -18,8 +18,8 @@ export function Settings() {
     <div className="space-y-8">
       {/* Page Header */}
       <div>
-        <h1 className="text-[22px] font-semibold text-[var(--pkf-text-strong)]">Settings</h1>
-        <p className="mt-2 text-[14px] text-[var(--pkf-text-muted)]">
+        <h1 className="text-[22px] font-semibold text-(--pkf-text-strong)">Settings</h1>
+        <p className="mt-2 text-[14px] text-(--pkf-text-muted)">
           Configure PKF to work the way you prefer.
         </p>
       </div>
@@ -30,23 +30,23 @@ export function Settings() {
         title="Appearance"
         description="Visual preferences"
       >
-        <div className="flex items-center justify-between rounded-xl bg-[var(--pkf-surface)] p-4">
+        <div className="flex items-center justify-between rounded-xl bg-(--pkf-surface) p-4">
           <div className="flex items-center gap-3">
             {darkMode ? (
-              <Moon className="h-5 w-5 text-[var(--pkf-primary)]" />
+              <Moon className="h-5 w-5 text-(--pkf-primary)" />
             ) : (
-              <Sun className="h-5 w-5 text-[var(--pkf-secondary)]" />
+              <Sun className="h-5 w-5 text-(--pkf-secondary))" />
             )}
             <div>
-              <p className="text-[14px] font-medium text-[var(--pkf-text-strong)]">Theme</p>
-              <p className="text-[13px] text-[var(--pkf-text-muted)]">
+              <p className="text-[14px] font-medium text-(--pkf-text-strong)">Theme</p>
+              <p className="text-[13px] text-(--pkf-text-muted)">
                 {darkMode ? 'Dark mode' : 'Light mode'}
               </p>
             </div>
           </div>
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="pkf-focus rounded-lg bg-[var(--pkf-overlay)] px-4 py-2 text-[13px] font-medium text-[var(--pkf-text)] hover:bg-[var(--pkf-overlay-hover)]"
+            className="pkf-focus rounded-lg bg-(--pkf-overlay) px-4 py-2 text-[13px] font-medium text-(--pkf-text) hover:bg-(--pkf-overlay-hover)"
           >
             Switch
           </button>
@@ -132,7 +132,7 @@ export function Settings() {
           </SoftButton>
         </div>
 
-        <p className="mt-4 text-[13px] text-[var(--pkf-text-muted)]">
+        <p className="mt-4 text-[13px] text-(--pkf-text-muted)">
           Deleting data is permanent and cannot be undone. We don't keep backups.
         </p>
       </SettingsSection>
@@ -152,14 +152,14 @@ function SettingsSection({
   children: React.ReactNode
 }) {
   return (
-    <section className="rounded-2xl bg-[var(--pkf-card)] p-6 ring-1 ring-[var(--pkf-border)]">
+    <section className="rounded-2xl bg-(--pkf-card)) p-6 ring-1 ring-(--pkf-border)">
       <div className="mb-5 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--pkf-surface)] text-[var(--pkf-text-muted)]">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-(--pkf-surface) text-(--pkf-text-muted)">
           {icon}
         </div>
         <div>
-          <h2 className="text-[15px] font-medium text-[var(--pkf-text-strong)]">{title}</h2>
-          <p className="text-[13px] text-[var(--pkf-text-muted)]">{description}</p>
+          <h2 className="text-[15px] font-medium text-(--pkf-text-strong)">{title}</h2>
+          <p className="text-[13px] text-(--pkf-text-muted)">{description}</p>
         </div>
       </div>
       {children}

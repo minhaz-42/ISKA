@@ -14,10 +14,10 @@ interface InsightCardProps {
 }
 
 const toneDot: Record<InsightTone, string> = {
-  neutral: 'bg-[var(--pkf-text-subtle)]',
-  success: 'bg-[var(--pkf-success)]',
-  warning: 'bg-[var(--pkf-warning)]',
-  info: 'bg-[var(--pkf-info)]',
+  neutral: 'bg-(--pkf-text-subtle)',
+  success: 'bg-(--pkf-success))',
+  warning: 'bg-(--pkf-warning))',
+  info: 'bg-(--pkf-info))',
 }
 
 export function InsightCard({
@@ -36,20 +36,20 @@ export function InsightCard({
       <div className="flex items-start gap-3">
         <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${toneDot[tone]}`} />
         <div className="min-w-0 flex-1">
-          <h3 className="text-[14px] font-medium text-[var(--pkf-text-strong)] leading-snug">
+          <h3 className="text-[14px] font-medium text-(--pkf-text-strong) leading-snug">
             {title}
           </h3>
-          <p className="mt-1 text-[13px] text-[var(--pkf-text-muted)] leading-relaxed">
+          <p className="mt-1 text-[13px] text-(--pkf-text-muted) leading-relaxed">
             {summary}
           </p>
         </div>
         {timestamp && (
-          <span className="shrink-0 text-[12px] text-[var(--pkf-text-subtle)]">{timestamp}</span>
+          <span className="shrink-0 text-[12px] text-(--pkf-text-subtle)">{timestamp}</span>
         )}
       </div>
 
       {explanation && open && (
-        <div className="mt-3 ml-5 rounded-xl bg-[var(--pkf-overlay)] p-3 text-[13px] text-[var(--pkf-text)] leading-relaxed ring-1 ring-[var(--pkf-border-subtle)]">
+        <div className="mt-3 ml-5 rounded-xl bg-(--pkf-overlay) p-3 text-[13px] text-(--pkf-text) leading-relaxed ring-1 ring-(--pkf-border-subtle)">
           {explanation}
         </div>
       )}
@@ -60,7 +60,7 @@ export function InsightCard({
 
   if (!expandable || !explanation) {
     return (
-      <div className="rounded-2xl bg-[var(--pkf-card)] p-4 ring-1 ring-[var(--pkf-border)] transition-colors hover:bg-[var(--pkf-card-hover)]">
+      <div className="rounded-2xl bg-(--pkf-card)) p-4 ring-1 ring-(--pkf-border) transition-colors hover:bg-(--pkf-card-hover))">
         {content}
       </div>
     )
@@ -70,30 +70,30 @@ export function InsightCard({
     <details
       open={open}
       onToggle={(e) => setOpen((e.target as HTMLDetailsElement).open)}
-      className="group rounded-2xl bg-[var(--pkf-card)] ring-1 ring-[var(--pkf-border)] transition-colors hover:bg-[var(--pkf-card-hover)]"
+      className="group rounded-2xl bg-(--pkf-card)) ring-1 ring-(--pkf-border) transition-colors hover:bg-(--pkf-card-hover))"
     >
       <summary className="cursor-pointer p-4 list-none outline-none pkf-focus rounded-2xl">
         <div className="flex items-center justify-between">
           <div className="flex items-start gap-3 min-w-0">
             <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${toneDot[tone]}`} />
             <div className="min-w-0">
-              <h3 className="text-[14px] font-medium text-[var(--pkf-text-strong)] leading-snug">
+              <h3 className="text-[14px] font-medium text-(--pkf-text-strong) leading-snug">
                 {title}
               </h3>
-              <p className="mt-1 text-[13px] text-[var(--pkf-text-muted)] leading-relaxed">
+              <p className="mt-1 text-[13px] text-(--pkf-text-muted) leading-relaxed">
                 {summary}
               </p>
             </div>
           </div>
           <ChevronDown
-            className={`h-4 w-4 shrink-0 text-[var(--pkf-text-subtle)] transition-transform ${
+            className={`h-4 w-4 shrink-0 text-(--pkf-text-subtle) transition-transform ${
               open ? 'rotate-180' : ''
             }`}
           />
         </div>
       </summary>
       <div className="px-4 pb-4">
-        <div className="ml-5 rounded-xl bg-[var(--pkf-overlay)] p-3 text-[13px] text-[var(--pkf-text)] leading-relaxed ring-1 ring-[var(--pkf-border-subtle)]">
+        <div className="ml-5 rounded-xl bg-(--pkf-overlay) p-3 text-[13px] text-(--pkf-text) leading-relaxed ring-1 ring-(--pkf-border-subtle)">
           {explanation}
         </div>
         {actions && <div className="mt-3 ml-5 flex items-center gap-2">{actions}</div>}

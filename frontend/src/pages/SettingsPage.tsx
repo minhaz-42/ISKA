@@ -18,7 +18,7 @@ function ToggleRow(props: { label: string; description: string; checked: boolean
         className={
           'pkf-focus h-8 w-14 rounded-full p-1 ring-1 transition ' +
           (checked
-            ? 'bg-[rgba(122,162,247,0.25)] ring-[rgba(122,162,247,0.35)]'
+            ? 'bg-[rgba(122,162,247,0.25)) ring-[rgba(122,162,247,0.35))'
             : 'bg-white/5 ring-(--pkf-border)')
         }
         aria-pressed={checked}
@@ -26,7 +26,7 @@ function ToggleRow(props: { label: string; description: string; checked: boolean
         <span
           className={
             'block h-6 w-6 rounded-full bg-slate-100/90 shadow-sm transition ' +
-            (checked ? 'translate-x-6 ring-1 ring-[rgba(122,162,247,0.35)]' : 'translate-x-0 ring-1 ring-(--pkf-border)')
+            (checked ? 'translate-x-6 ring-1 ring-[rgba(122,162,247,0.35))' : 'translate-x-0 ring-1 ring-(--pkf-border)')
           }
         />
       </button>

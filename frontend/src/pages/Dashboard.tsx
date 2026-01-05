@@ -7,10 +7,10 @@ export function Dashboard() {
     <div className="space-y-8">
       {/* Page Header */}
       <div>
-        <h1 className="text-[22px] font-semibold text-[var(--pkf-text-strong)]">
+        <h1 className="text-[22px] font-semibold text-(--pkf-text-strong)">
           Reading activity
         </h1>
-        <p className="mt-2 text-[14px] text-[var(--pkf-text-muted)]">
+        <p className="mt-2 text-[14px] text-(--pkf-text-muted)">
           A calm overview of your information patterns.
         </p>
       </div>
@@ -51,7 +51,7 @@ export function Dashboard() {
 
       {/* Recent Insights */}
       <section>
-        <h2 className="mb-4 text-[16px] font-medium text-[var(--pkf-text-strong)]">
+        <h2 className="mb-4 text-[16px] font-medium text-(--pkf-text-strong)">
           Recent insights
         </h2>
 
@@ -83,8 +83,8 @@ export function Dashboard() {
       </section>
 
       {/* Empty State Placeholder */}
-      <section className="rounded-2xl bg-[var(--pkf-surface)] p-8 text-center ring-1 ring-[var(--pkf-border)]">
-        <p className="text-[14px] text-[var(--pkf-text-muted)]">
+      <section className="rounded-2xl bg-(--pkf-surface) p-8 text-center ring-1 ring-(--pkf-border)">
+        <p className="text-[14px] text-(--pkf-text-muted)">
           Add more documents to see richer patterns over time.
         </p>
         <SoftButton variant="subtle" size="sm" className="mt-4">
@@ -107,13 +107,13 @@ function StatCard({
   detail: string
 }) {
   return (
-    <div className="rounded-2xl bg-[var(--pkf-card)] p-5 ring-1 ring-[var(--pkf-border)]">
-      <div className="flex items-center gap-2 text-[var(--pkf-text-subtle)]">
+    <div className="rounded-2xl bg-(--pkf-card)) p-5 ring-1 ring-(--pkf-border)">
+      <div className="flex items-center gap-2 text-(--pkf-text-subtle)">
         {icon}
         <span className="text-[13px]">{label}</span>
       </div>
-      <div className="mt-2 text-[24px] font-semibold text-[var(--pkf-text-strong)]">{value}</div>
-      <div className="mt-1 text-[12px] text-[var(--pkf-text-muted)]">{detail}</div>
+      <div className="mt-2 text-[24px] font-semibold text-(--pkf-text-strong)">{value}</div>
+      <div className="mt-1 text-[12px] text-(--pkf-text-muted)">{detail}</div>
     </div>
   )
 }

@@ -47,7 +47,7 @@ export function StatCard(props: {
         <div className="mt-3">
           <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-orange-400 to-red-500"
+              className="h-full rounded-full bg-linear-to-r from-orange-400 to-red-500"
               style={{ width: `${Math.round(clamped * 100)}%` }}
               aria-label={`${label} ${Math.round(clamped * 100)}%`}
             />

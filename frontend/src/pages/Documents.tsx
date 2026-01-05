@@ -54,8 +54,8 @@ export function Documents() {
       {/* Page Header */}
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-[22px] font-semibold text-[var(--pkf-text-strong)]">Documents</h1>
-          <p className="mt-2 text-[14px] text-[var(--pkf-text-muted)]">
+          <h1 className="text-[22px] font-semibold text-(--pkf-text-strong)">Documents</h1>
+          <p className="mt-2 text-[14px] text-(--pkf-text-muted)">
             Content you've added for analysis.
           </p>
         </div>
@@ -76,25 +76,25 @@ export function Documents() {
         onDrop={() => setDragOver(false)}
         className={`rounded-2xl border-2 border-dashed p-8 text-center transition-colors ${
           dragOver
-            ? 'border-[var(--pkf-primary)] bg-[var(--pkf-primary-subtle)]'
-            : 'border-[var(--pkf-border)] bg-[var(--pkf-surface)]'
+            ? 'border-(--pkf-primary) bg-(--pkf-primary-subtle)'
+            : 'border-(--pkf-border) bg-(--pkf-surface)'
         }`}
       >
-        <Upload className="mx-auto h-8 w-8 text-[var(--pkf-text-subtle)]" />
-        <p className="mt-3 text-[14px] text-[var(--pkf-text)]">
+        <Upload className="mx-auto h-8 w-8 text-(--pkf-text-subtle)" />
+        <p className="mt-3 text-[14px] text-(--pkf-text)">
           Drop files here or{' '}
-          <button className="text-[var(--pkf-primary)] hover:underline">browse</button>
+          <button className="text-(--pkf-primary) hover:underline">browse</button>
         </p>
-        <p className="mt-1 text-[12px] text-[var(--pkf-text-muted)]">PDF, TXT, or paste text</p>
+        <p className="mt-1 text-[12px] text-(--pkf-text-muted)">PDF, TXT, or paste text</p>
       </div>
 
       {/* Document List */}
       <section>
-        <h2 className="mb-4 text-[16px] font-medium text-[var(--pkf-text-strong)]">
+        <h2 className="mb-4 text-[16px] font-medium text-(--pkf-text-strong)">
           Your documents
         </h2>
 
-        <div className="divide-y divide-[var(--pkf-border)] rounded-2xl bg-[var(--pkf-card)] ring-1 ring-[var(--pkf-border)]">
+        <div className="divide-y divide-[var(--pkf-border) rounded-2xl bg-(--pkf-card)) ring-1 ring-(--pkf-border)">
           {mockDocuments.map((doc) => (
             <DocumentRow key={doc.id} document={doc} />
           ))}
@@ -112,16 +112,16 @@ export function Documents() {
 
 function DocumentRow({ document }: { document: Document }) {
   return (
-    <div className="flex items-center gap-4 p-4 hover:bg-[var(--pkf-card-hover)] transition-colors">
-      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[var(--pkf-surface)] ring-1 ring-[var(--pkf-border-subtle)]">
-        <FileText className="h-5 w-5 text-[var(--pkf-text-subtle)]" />
+    <div className="flex items-center gap-4 p-4 hover:bg-(--pkf-card-hover)) transition-colors">
+      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-(--pkf-surface) ring-1 ring-(--pkf-border-subtle)">
+        <FileText className="h-5 w-5 text-(--pkf-text-subtle)" />
       </div>
 
       <div className="min-w-0 flex-1">
-        <h3 className="truncate text-[14px] font-medium text-[var(--pkf-text-strong)]">
+        <h3 className="truncate text-[14px] font-medium text-(--pkf-text-strong)">
           {document.title}
         </h3>
-        <div className="mt-1 flex items-center gap-3 text-[12px] text-[var(--pkf-text-muted)]">
+        <div className="mt-1 flex items-center gap-3 text-[12px] text-(--pkf-text-muted)">
           <span>{document.source}</span>
           <span>·</span>
           <span>{document.wordCount.toLocaleString()} words</span>
@@ -131,16 +131,16 @@ function DocumentRow({ document }: { document: Document }) {
       </div>
 
       {document.hasInsights && (
-        <span className="flex-shrink-0 rounded-full bg-[var(--pkf-primary-subtle)] px-2 py-0.5 text-[11px] font-medium text-[var(--pkf-primary)]">
+        <span className="flex-shrink-0 rounded-full bg-(--pkf-primary-subtle) px-2 py-0.5 text-[11px] font-medium text-(--pkf-primary)">
           Insights
         </span>
       )}
 
       <div className="flex flex-shrink-0 items-center gap-1">
-        <button className="pkf-focus rounded-lg p-2 text-[var(--pkf-text-muted)] hover:bg-[var(--pkf-overlay)] hover:text-[var(--pkf-text)]">
+        <button className="pkf-focus rounded-lg p-2 text-(--pkf-text-muted) hover:bg-(--pkf-overlay) hover:text-(--pkf-text)">
           <ExternalLink className="h-4 w-4" />
         </button>
-        <button className="pkf-focus rounded-lg p-2 text-[var(--pkf-text-muted)] hover:bg-[var(--pkf-overlay)] hover:text-[var(--pkf-text)]">
+        <button className="pkf-focus rounded-lg p-2 text-(--pkf-text-muted) hover:bg-(--pkf-overlay) hover:text-(--pkf-text)">
           <MoreHorizontal className="h-4 w-4" />
         </button>
       </div>

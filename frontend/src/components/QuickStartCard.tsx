@@ -8,7 +8,7 @@ export function QuickStartCard() {
           <h2 className="text-lg font-semibold">Quick start</h2>
           <p className="mt-1 text-sm text-slate-300/80">Upload or paste content to score it.</p>
         </div>
-        <div className="hidden sm:block rounded-full bg-gradient-to-r from-orange-400/20 to-red-500/20 px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10">
+        <div className="hidden sm:block rounded-full bg-linear-to-r from-orange-400/20 to-red-500/20 px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10">
           Developer-friendly
         </div>
       </div>

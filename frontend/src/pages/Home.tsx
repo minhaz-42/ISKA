@@ -63,7 +63,7 @@ function SoftRing(props: {
         </div>
 
         {/* Tooltip */}
-        <div className="pointer-events-none absolute left-0 top-full z-10 mt-2 hidden w-[min(320px,90vw)] rounded-2xl bg-(--pkf-card) p-4 text-[13px] text-(--pkf-text) ring-1 ring-(--pkf-border) group-hover:block group-focus-within:block">
+        <div className="pointer-events-none absolute left-0 top-full z-10 mt-2 hidden w-[min(320px,90vw)) rounded-2xl bg-(--pkf-card) p-4 text-[13px] text-(--pkf-text) ring-1 ring-(--pkf-border) group-hover:block group-focus-within:block">
           {help}
         </div>
       </div>

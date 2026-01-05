@@ -13,13 +13,13 @@ interface SoftButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-[var(--pkf-primary)] text-white hover:bg-[var(--pkf-primary-hover)] ring-1 ring-white/10',
+    'bg-(--pkf-primary) text-white hover:bg-(--pkf-primary-hover)) ring-1 ring-white/10',
   secondary:
-    'bg-[var(--pkf-surface)] text-[var(--pkf-text-strong)] ring-1 ring-[var(--pkf-border)] hover:bg-[var(--pkf-surface-hover)]',
+    'bg-(--pkf-surface) text-(--pkf-text-strong) ring-1 ring-(--pkf-border) hover:bg-(--pkf-surface-hover))',
   ghost:
-    'bg-transparent text-[var(--pkf-text)] hover:bg-[var(--pkf-overlay-hover)]',
+    'bg-transparent text-(--pkf-text) hover:bg-(--pkf-overlay-hover)',
   subtle:
-    'bg-[var(--pkf-overlay)] text-[var(--pkf-text)] ring-1 ring-[var(--pkf-border-subtle)] hover:bg-[var(--pkf-overlay-hover)]',
+    'bg-(--pkf-overlay) text-(--pkf-text) ring-1 ring-(--pkf-border-subtle) hover:bg-(--pkf-overlay-hover)',
 }
 
 const sizeClasses: Record<ButtonSize, string> = {

@@ -24,14 +24,14 @@ export function AuthForm({ mode, onSubmit, onToggleMode, error }: AuthFormProps)
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--pkf-bg)] px-6 py-12">
+    <div className="min-h-screen flex items-center justify-center bg-(--pkf-bg) px-6 py-12">
       <div className="w-full max-w-sm">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-[24px] font-semibold text-[var(--pkf-text-strong)]">
+          <h1 className="text-[24px] font-semibold text-(--pkf-text-strong)">
             {mode === 'login' ? 'Welcome back' : 'Create account'}
           </h1>
-          <p className="mt-2 text-[14px] text-[var(--pkf-text-muted)]">
+          <p className="mt-2 text-[14px] text-(--pkf-text-muted)">
             {mode === 'login'
               ? 'Sign in to your PKF account'
               : 'Start your calm reading journey'}
@@ -43,7 +43,7 @@ export function AuthForm({ mode, onSubmit, onToggleMode, error }: AuthFormProps)
           <div>
             <label
               htmlFor="email"
-              className="block text-[13px] font-medium text-[var(--pkf-text)] mb-2"
+              className="block text-[13px] font-medium text-(--pkf-text) mb-2"
             >
               Email
             </label>
@@ -54,7 +54,7 @@ export function AuthForm({ mode, onSubmit, onToggleMode, error }: AuthFormProps)
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="email"
-              className="pkf-focus w-full rounded-xl bg-[var(--pkf-surface)] px-4 py-3 text-[14px] text-[var(--pkf-text-strong)] ring-1 ring-[var(--pkf-border)] placeholder:text-[var(--pkf-text-subtle)] focus:ring-[var(--pkf-border-focus)]"
+              className="pkf-focus w-full rounded-xl bg-(--pkf-surface) px-4 py-3 text-[14px] text-(--pkf-text-strong) ring-1 ring-(--pkf-border) placeholder:text-(--pkf-text-subtle) focus:ring-(--pkf-border-focus))"
               placeholder="you@example.com"
             />
           </div>
@@ -62,7 +62,7 @@ export function AuthForm({ mode, onSubmit, onToggleMode, error }: AuthFormProps)
           <div>
             <label
               htmlFor="password"
-              className="block text-[13px] font-medium text-[var(--pkf-text)] mb-2"
+              className="block text-[13px] font-medium text-(--pkf-text) mb-2"
             >
               Password
             </label>
@@ -74,18 +74,18 @@ export function AuthForm({ mode, onSubmit, onToggleMode, error }: AuthFormProps)
               required
               autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
               minLength={8}
-              className="pkf-focus w-full rounded-xl bg-[var(--pkf-surface)] px-4 py-3 text-[14px] text-[var(--pkf-text-strong)] ring-1 ring-[var(--pkf-border)] placeholder:text-[var(--pkf-text-subtle)] focus:ring-[var(--pkf-border-focus)]"
+              className="pkf-focus w-full rounded-xl bg-(--pkf-surface) px-4 py-3 text-[14px] text-(--pkf-text-strong) ring-1 ring-(--pkf-border) placeholder:text-(--pkf-text-subtle) focus:ring-(--pkf-border-focus))"
               placeholder="••••••••"
             />
             {mode === 'register' && (
-              <p className="mt-2 text-[12px] text-[var(--pkf-text-muted)]">
+              <p className="mt-2 text-[12px] text-(--pkf-text-muted)">
                 At least 8 characters
               </p>
             )}
           </div>
 
           {error && (
-            <div className="rounded-xl bg-[var(--pkf-warning-subtle)] px-4 py-3 text-[13px] text-[var(--pkf-warning)]">
+            <div className="rounded-xl bg-(--pkf-warning-subtle)) px-4 py-3 text-[13px] text-(--pkf-warning))">
               {error}
             </div>
           )}
@@ -102,11 +102,11 @@ export function AuthForm({ mode, onSubmit, onToggleMode, error }: AuthFormProps)
         </form>
 
         {/* Toggle */}
-        <p className="mt-6 text-center text-[13px] text-[var(--pkf-text-muted)]">
+        <p className="mt-6 text-center text-[13px] text-(--pkf-text-muted)">
           {mode === 'login' ? "Don't have an account? " : 'Already have an account? '}
           <button
             onClick={onToggleMode}
-            className="text-[var(--pkf-primary)] hover:underline"
+            className="text-(--pkf-primary) hover:underline"
           >
             {mode === 'login' ? 'Create one' : 'Sign in'}
           </button>
@@ -116,7 +116,7 @@ export function AuthForm({ mode, onSubmit, onToggleMode, error }: AuthFormProps)
         <div className="mt-8 text-center">
           <a
             href="#"
-            className="text-[13px] text-[var(--pkf-text-subtle)] hover:text-[var(--pkf-text-muted)]"
+            className="text-[13px] text-(--pkf-text-subtle) hover:text-(--pkf-text-muted)"
           >
             ← Back to home
           </a>

@@ -38,27 +38,27 @@ export function CalmShell(props: {
   }, [darkMode])
 
   return (
-    <div className="flex h-screen bg-[var(--pkf-bg)]">
+    <div className="flex h-screen bg-(--pkf-bg)">
       {/* Mobile Backdrop */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-40 bg-[var(--pkf-backdrop)] lg:hidden"
+          className="fixed inset-0 z-40 bg-(--pkf-backdrop) lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-[var(--pkf-surface)] ring-1 ring-[var(--pkf-border)] transition-transform lg:static lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col bg-(--pkf-surface) ring-1 ring-(--pkf-border) transition-transform lg:static lg:translate-x-0 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Logo */}
         <div className="flex h-16 items-center justify-between px-5">
-          <span className="text-[16px] font-semibold text-[var(--pkf-text-strong)]">PKF</span>
+          <span className="text-[16px] font-semibold text-(--pkf-text-strong)">PKF</span>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="pkf-focus rounded-lg p-2 text-[var(--pkf-text-muted)] hover:bg-[var(--pkf-overlay)] lg:hidden"
+            className="pkf-focus rounded-lg p-2 text-(--pkf-text-muted) hover:bg-(--pkf-overlay) lg:hidden"
           >
             <X className="h-5 w-5" />
           </button>
@@ -78,8 +78,8 @@ export function CalmShell(props: {
                 }}
                 className={`pkf-focus flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[14px] transition-colors ${
                   isActive
-                    ? 'bg-[var(--pkf-primary-subtle)] font-medium text-[var(--pkf-primary)]'
-                    : 'text-[var(--pkf-text-muted)] hover:bg-[var(--pkf-overlay)] hover:text-[var(--pkf-text)]'
+                    ? 'bg-(--pkf-primary-subtle) font-medium text-(--pkf-primary)'
+                    : 'text-(--pkf-text-muted) hover:bg-(--pkf-overlay) hover:text-(--pkf-text)'
                 }`}
               >
                 <Icon className="h-5 w-5" />
@@ -90,11 +90,11 @@ export function CalmShell(props: {
         </nav>
 
         {/* Footer */}
-        <div className="border-t border-[var(--pkf-border)] p-4">
+        <div className="border-t border-(--pkf-border) p-4">
           {/* Theme Toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="pkf-focus mb-3 flex w-full items-center gap-3 rounded-xl px-4 py-2 text-[13px] text-[var(--pkf-text-muted)] hover:bg-[var(--pkf-overlay)]"
+            className="pkf-focus mb-3 flex w-full items-center gap-3 rounded-xl px-4 py-2 text-[13px] text-(--pkf-text-muted) hover:bg-(--pkf-overlay)"
           >
             {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             {darkMode ? 'Light mode' : 'Dark mode'}
@@ -102,7 +102,7 @@ export function CalmShell(props: {
 
           {/* User Info */}
           {user && (
-            <div className="mb-3 truncate px-4 text-[12px] text-[var(--pkf-text-subtle)]">
+            <div className="mb-3 truncate px-4 text-[12px] text-(--pkf-text-subtle)">
               {user.email || user.username}
             </div>
           )}
@@ -111,7 +111,7 @@ export function CalmShell(props: {
           {onLogout && (
             <button
               onClick={() => void onLogout()}
-              className="pkf-focus flex w-full items-center gap-3 rounded-xl px-4 py-2 text-[13px] text-[var(--pkf-text-muted)] hover:bg-[var(--pkf-overlay)] hover:text-[var(--pkf-text)]"
+              className="pkf-focus flex w-full items-center gap-3 rounded-xl px-4 py-2 text-[13px] text-(--pkf-text-muted) hover:bg-(--pkf-overlay) hover:text-(--pkf-text)"
             >
               <LogOut className="h-4 w-4" />
               Sign out
@@ -123,16 +123,16 @@ export function CalmShell(props: {
       {/* Main Content */}
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Top Bar */}
-        <header className="flex h-16 items-center justify-between border-b border-[var(--pkf-border)] bg-[var(--pkf-surface)] px-6 lg:justify-end">
+        <header className="flex h-16 items-center justify-between border-b border-(--pkf-border) bg-(--pkf-surface) px-6 lg:justify-end">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="pkf-focus rounded-lg p-2 text-[var(--pkf-text-muted)] hover:bg-[var(--pkf-overlay)] lg:hidden"
+            className="pkf-focus rounded-lg p-2 text-(--pkf-text-muted) hover:bg-(--pkf-overlay) lg:hidden"
           >
             <Menu className="h-5 w-5" />
           </button>
 
           {/* Breadcrumb or Page Title */}
-          <div className="flex items-center gap-2 text-[14px] text-[var(--pkf-text-muted)]">
+          <div className="flex items-center gap-2 text-[14px] text-(--pkf-text-muted)">
             <span className="capitalize">{route.replace('-', ' ')}</span>
           </div>
         </header>

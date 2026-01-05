@@ -95,8 +95,8 @@ export function App() {
 
   if (checking) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[var(--pkf-bg)]">
-        <div className="text-[14px] text-[var(--pkf-text-muted)]">Loading…</div>
+      <div className="min-h-screen flex items-center justify-center bg-(--pkf-bg)">
+        <div className="text-[14px] text-(--pkf-text-muted)">Loading…</div>
       </div>
     )
   }

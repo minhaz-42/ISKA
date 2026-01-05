@@ -61,7 +61,7 @@ export function UploadCard(props: {
           <button
             type="submit"
             disabled={disabled}
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 px-4 py-2 text-sm font-semibold text-black shadow-sm shadow-orange-500/20 transition active:translate-y-px disabled:opacity-60"
+            className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-orange-400 to-red-500 px-4 py-2 text-sm font-semibold text-black shadow-sm shadow-orange-500/20 transition active:translate-y-px disabled:opacity-60"
           >
             {status === 'loading' ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
             Upload

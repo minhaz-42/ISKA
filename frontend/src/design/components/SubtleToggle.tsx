@@ -20,16 +20,16 @@ export function SubtleToggle({
   return (
     <label
       htmlFor={id}
-      className={`flex items-start justify-between gap-4 rounded-2xl p-4 ring-1 ring-[var(--pkf-border)] transition-colors ${
+      className={`flex items-start justify-between gap-4 rounded-2xl p-4 ring-1 ring-(--pkf-border) transition-colors ${
         disabled
           ? 'opacity-50 cursor-not-allowed'
-          : 'cursor-pointer hover:bg-[var(--pkf-surface-hover)]'
+          : 'cursor-pointer hover:bg-(--pkf-surface-hover))'
       }`}
     >
       <div className="min-w-0">
-        <div className="text-[14px] font-medium text-[var(--pkf-text-strong)]">{label}</div>
+        <div className="text-[14px] font-medium text-(--pkf-text-strong)">{label}</div>
         {description && (
-          <p className="mt-1 text-[13px] text-[var(--pkf-text-muted)] leading-relaxed">
+          <p className="mt-1 text-[13px] text-(--pkf-text-muted) leading-relaxed">
             {description}
           </p>
         )}
@@ -43,7 +43,7 @@ export function SubtleToggle({
         disabled={disabled}
         onClick={() => !disabled && onChange(!checked)}
         className={`pkf-focus relative shrink-0 h-7 w-12 rounded-full transition-colors ${
-          checked ? 'bg-[var(--pkf-primary)]' : 'bg-[var(--pkf-overlay)] ring-1 ring-[var(--pkf-border)]'
+          checked ? 'bg-(--pkf-primary)' : 'bg-(--pkf-overlay) ring-1 ring-(--pkf-border)'
         }`}
       >
         <span
