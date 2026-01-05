@@ -1,0 +1,21 @@
+{
+  "name": "iska-personal-knowledge-firewall",
+  "private": true,
+  "version": "0.1.0",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "scripts": {
+    "backend:dev": "node scripts/dev-backend.mjs",
+    "backend:stop": "node scripts/backend-stop.mjs",
+    "backend:restart": "npm run backend:stop && npm run backend:dev",
+    "frontend:install": "npm --prefix frontend install",
+    "frontend:dev": "npm --prefix frontend run dev -- --host 127.0.0.1 --port 5173",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:build:watch": "npm --prefix frontend run build:watch",
+    "frontend:preview": "npm --prefix frontend run preview",
+    "build": "npm run frontend:build",
+    "dev:vite": "concurrently --kill-others-on-fail -n backend,frontend \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "dev": "concurrently --kill-others-on-fail -n backend,build \"npm run backend:dev\" \"npm run frontend:build:watch\""
+  }
+}

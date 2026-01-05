@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "strict": true,
+    "types": ["vite/client"]
+  },
+  "include": ["src"],
+  "exclude": [
+    "src/pages/DashboardPage.tsx",
+    "src/pages/DocumentsPage.tsx",
+    "src/pages/HomePage.tsx",
+    "src/pages/LiveMonitorPage.tsx",
+    "src/pages/SettingsPage.tsx",
+
+    "src/components/dashboard/**",
+    "src/components/DocumentTable.tsx",
+    "src/components/Header.tsx",
+    "src/components/IngestCards.tsx",
+    "src/components/QuickStartCard.tsx",
+    "src/components/StatCard.tsx",
+    "src/components/index.ts",
+
+    "src/styles/global.css"
+  ]
+}

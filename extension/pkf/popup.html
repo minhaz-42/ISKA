@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKF</title>
+    <style>
+      :root {
+        color-scheme: dark;
+
+        /* PKF strict color system */
+        --pkf-bg: #0c0f14;
+        --pkf-surface: #111827;
+        --pkf-card: #161e2e;
+        --pkf-card-hover: #1b2538;
+
+        --pkf-primary: #7aa2f7;
+        --pkf-primary-hover: #8fb3ff;
+
+        --pkf-secondary: #f5c97a;
+
+        --pkf-healthy: #7bc99a;
+        --pkf-neutral: #e5d27a;
+        --pkf-attention: #d98c8c;
+
+        --pkf-border: #1f2937;
+
+        --pkf-text: #e2e8f0;
+        --pkf-text-strong: #f1f5f9;
+        --pkf-text-muted: #94a3b8;
+        --pkf-overlay: rgba(255, 255, 255, 0.05);
+        --pkf-overlay-hover: rgba(255, 255, 255, 0.08);
+      }
+
+      body {
+        margin: 0;
+        background: var(--pkf-bg);
+        color: var(--pkf-text);
+        font-family: ui-sans-serif, system-ui, Inter, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        line-height: 1.6;
+        width: 320px;
+      }
+
+      .shell {
+        padding: 14px;
+      }
+
+      .card {
+        background: var(--pkf-card);
+        border: 1px solid var(--pkf-border);
+        border-radius: 16px;
+        padding: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .title {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--pkf-text-strong);
+      }
+
+      .subtitle {
+        margin-top: 6px;
+        font-size: 12px;
+        color: var(--pkf-text-muted);
+      }
+
+      .toggle {
+        margin-top: 12px;
+        border-radius: 999px;
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--pkf-border);
+        background: var(--pkf-overlay);
+        color: var(--pkf-text);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: left;
+        transition: filter 150ms ease, background-color 150ms ease, transform 150ms ease;
+      }
+
+      .toggle:hover {
+        background: var(--pkf-overlay-hover);
+      }
+
+      .toggle:active {
+        transform: translateY(1px);
+      }
+
+      .toggle.on {
+        background: var(--pkf-primary);
+        border-color: rgba(255, 255, 255, 0.18);
+        color: var(--pkf-text-strong);
+      }
+
+      .toggle.on:hover {
+        filter: brightness(1.05);
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .pill {
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 11px;
+        border: 1px solid var(--pkf-border);
+        background: rgba(0, 0, 0, 0.15);
+        color: var(--pkf-text-muted);
+      }
+
+      .pill.on {
+        color: var(--pkf-text-strong);
+        border-color: rgba(255, 255, 255, 0.18);
+        background: rgba(0, 0, 0, 0.12);
+      }
+
+      .note {
+        margin-top: 10px;
+        font-size: 12px;
+        color: var(--pkf-text-muted);
+      }
+
+      .note strong {
+        color: var(--pkf-text);
+        font-weight: 600;
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--pkf-border);
+        margin: 12px 0;
+        opacity: 0.9;
+      }
+
+      .field {
+        margin-top: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .field .label {
+        font-size: 12px;
+        color: var(--pkf-text);
+        font-weight: 600;
+      }
+
+      .field .help {
+        margin-top: 2px;
+        font-size: 12px;
+        color: var(--pkf-text-muted);
+        font-weight: 400;
+      }
+
+      .switch {
+        flex: 0 0 auto;
+        width: 46px;
+        height: 28px;
+        border-radius: 999px;
+        border: 1px solid var(--pkf-border);
+        background: var(--pkf-overlay);
+        position: relative;
+        cursor: pointer;
+      }
+
+      .switch[data-on='true'] {
+        background: rgba(122, 162, 247, 0.18);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      .switch .knob {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        left: 3px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid var(--pkf-border);
+        transition: left 150ms ease;
+      }
+
+      .switch[data-on='true'] .knob {
+        left: 21px;
+        background: rgba(122, 162, 247, 0.6);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      .btn {
+        margin-top: 12px;
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--pkf-border);
+        background: var(--pkf-overlay);
+        color: var(--pkf-text);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .btn:hover {
+        background: var(--pkf-overlay-hover);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <div class="card">
+        <div class="title">Live monitor</div>
+        <div class="subtitle">A mindful assistant for your attention.</div>
+
+        <button id="toggle" class="toggle" type="button" aria-pressed="false">
+          <div class="row">
+            <div>Live monitor is off</div>
+            <div id="pill" class="pill">Off</div>
+          </div>
+          <div class="note">We only analyze visible content. <strong>Nothing is stored</strong> without your consent.</div>
+        </button>
+
+        <div class="divider"></div>
+
+        <div class="field">
+          <div style="min-width:0;">
+            <div class="label">Keep insights on this page</div>
+            <div class="help">Dismiss manually, or they clear when you navigate away.</div>
+          </div>
+          <button id="persist" class="switch" type="button" aria-label="Keep insights" data-on="true">
+            <span class="knob"></span>
+          </button>
+        </div>
+
+        <div class="field">
+          <div style="min-width:0;">
+            <div class="label">Auto-summarize this page</div>
+            <div class="help">Generates a short summary and calm notes once per page.</div>
+          </div>
+          <button id="autosummary" class="switch" type="button" aria-label="Auto summarize" data-on="true">
+            <span class="knob"></span>
+          </button>
+        </div>
+
+        <button id="summarize" class="btn" type="button">Summarize now</button>
+
+        <div id="status" class="note" style="display:none; margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

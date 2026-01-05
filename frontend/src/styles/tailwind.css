@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    /* PKF strict color system */
+    --pkf-bg: #0C0F14;
+    --pkf-surface: #111827;
+    --pkf-card: #161E2E;
+    --pkf-card-hover: #1B2538;
+
+    --pkf-primary: #7AA2F7;
+    --pkf-primary-hover: #8FB3FF;
+    --pkf-primary-muted: #4C6FBF;
+
+    --pkf-secondary: #F5C97A;
+    --pkf-secondary-hover: #E8B86D;
+    --pkf-secondary-muted: #9A7B43;
+
+    --pkf-healthy: #7BC99A;
+    --pkf-neutral: #E5D27A;
+    --pkf-attention: #D98C8C;
+
+    --pkf-border: #1F2937;
+
+    /* Text (tokenized to avoid hardcoded Tailwind grays in components) */
+    --pkf-text: #E2E8F0; /* calm off-white */
+    --pkf-text-strong: #F1F5F9;
+    --pkf-text-muted: #94A3B8;
+    --pkf-text-subtle: #64748B;
+
+    /* Overlays (replace `bg-white/5` etc in components) */
+    --pkf-overlay: rgba(255, 255, 255, 0.05);
+    --pkf-overlay-hover: rgba(255, 255, 255, 0.08);
+
+    /* Focus ring */
+    --pkf-focus-ring: rgba(122, 162, 247, 0.35);
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background: var(--pkf-bg);
+    color: var(--pkf-text);
+  }
+}
+
+/*
+  Tailwind v4 note:
+  Avoid @apply here to keep build stable across Tailwind engine changes.
+*/
+
+.pkf-card {
+  border-radius: 16px;
+  background: var(--pkf-card);
+  border: 1px solid var(--pkf-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.pkf-card-hover {
+  transition: transform 150ms ease, filter 150ms ease, background-color 150ms ease;
+}
+
+.pkf-card-hover:hover {
+  transform: translateY(-2px);
+  background: var(--pkf-card-hover);
+}
+
+.pkf-focus {
+  outline: none;
+}
+
+.pkf-focus:focus-visible {
+  box-shadow: 0 0 0 2px var(--pkf-focus-ring);
+}
+
+.pkf-ring {
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.10);
+}
+
+.pkf-hover {
+  transition: transform 150ms;
+}
+
+.pkf-hover:hover {
+  transform: translateY(-2px);
+}

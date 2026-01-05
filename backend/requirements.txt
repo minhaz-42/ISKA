@@ -1,0 +1,50 @@
+# Core Django Framework
+Django==5.0.1
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+django-filter==23.5
+
+# Database
+# NOTE: PKF defaults to SQLite for local dev.
+# Postgres support is optional and can be installed separately when needed:
+#   pip install psycopg[binary]
+# We intentionally do NOT pin psycopg2-binary here because wheels may lag for new Python versions.
+
+
+# NLP & ML Libraries
+spacy==3.7.2
+sentence-transformers==2.3.1
+transformers==4.36.2
+
+# Vector Storage & Similarity Search
+faiss-cpu==1.7.4  # Use faiss-gpu if GPU available
+chromadb==0.4.22
+
+# Graph Processing
+networkx==3.2.1
+# neo4j==5.15.0  # Uncomment if using Neo4j instead of NetworkX
+
+# Text Processing
+beautifulsoup4==4.12.3
+pypdf==4.0.1
+markdownify==0.11.6
+html2text==2020.1.16
+python-docx==1.1.2
+
+# Environment & Configuration
+python-dotenv==1.0.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Utilities
+numpy==1.26.3
+pandas==2.1.4
+scikit-learn==1.4.0
+requests==2.31.0
+
+# Development Tools
+black==23.12.1
+flake8==7.0.0
+pytest==7.4.4
+pytest-django==4.7.0
+ipython==8.19.0

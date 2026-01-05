@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    /* Backgrounds */
+    --pkf-bg: #FAFAF9;
+    --pkf-surface: #FFFFFF;
+    --pkf-surface-hover: #F7F7F6;
+    --pkf-card: #FFFFFF;
+    --pkf-card-hover: #FAFAF9;
+
+    /* Borders */
+    --pkf-border: #E8E7E5;
+    --pkf-border-subtle: #F0EFED;
+    --pkf-border-focus: #C4C3C0;
+
+    /* Text */
+    --pkf-text: #3D3D3C;
+    --pkf-text-strong: #1A1A19;
+    --pkf-text-muted: #6B6B69;
+    --pkf-text-subtle: #9A9A97;
+
+    /* Primary (calm blue) */
+    --pkf-primary: #5B7FD3;
+    --pkf-primary-hover: #4A6BC0;
+    --pkf-primary-muted: #8BA3E0;
+    --pkf-primary-subtle: #E8EDF8;
+
+    /* Secondary (warm gold) */
+    --pkf-secondary: #D4A853;
+    --pkf-secondary-hover: #C49840;
+    --pkf-secondary-muted: #E5C98A;
+    --pkf-secondary-subtle: #FAF5E8;
+
+    /* Status */
+    --pkf-success: #6DAA7E;
+    --pkf-success-subtle: #EDF5EF;
+    --pkf-warning: #D4A853;
+    --pkf-warning-subtle: #FAF5E8;
+    --pkf-info: #7BA3C9;
+    --pkf-info-subtle: #EEF4F9;
+
+    /* Overlays */
+    --pkf-overlay: rgba(0, 0, 0, 0.03);
+    --pkf-overlay-hover: rgba(0, 0, 0, 0.05);
+    --pkf-backdrop: rgba(0, 0, 0, 0.4);
+
+    /* Focus */
+    --pkf-focus-ring: rgba(91, 127, 211, 0.4);
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    /* Backgrounds */
+    --pkf-bg: #0F1115;
+    --pkf-surface: #161A21;
+    --pkf-surface-hover: #1C2028;
+    --pkf-card: #1A1F27;
+    --pkf-card-hover: #21262F;
+
+    /* Borders */
+    --pkf-border: #2A2F38;
+    --pkf-border-subtle: #232831;
+    --pkf-border-focus: #404650;
+
+    /* Text */
+    --pkf-text: #D4D4D2;
+    --pkf-text-strong: #F0F0EE;
+    --pkf-text-muted: #9A9A97;
+    --pkf-text-subtle: #6B6B69;
+
+    /* Primary */
+    --pkf-primary: #7AA2F7;
+    --pkf-primary-hover: #8FB3FF;
+    --pkf-primary-muted: #5B7FD3;
+    --pkf-primary-subtle: #1E2738;
+
+    /* Secondary */
+    --pkf-secondary: #E5C98A;
+    --pkf-secondary-hover: #F0D9A0;
+    --pkf-secondary-muted: #B89C5A;
+    --pkf-secondary-subtle: #2A2518;
+
+    /* Status */
+    --pkf-success: #7BC99A;
+    --pkf-success-subtle: #1A2820;
+    --pkf-warning: #E5C98A;
+    --pkf-warning-subtle: #2A2518;
+    --pkf-info: #8FB3E8;
+    --pkf-info-subtle: #1A2230;
+
+    /* Overlays */
+    --pkf-overlay: rgba(255, 255, 255, 0.03);
+    --pkf-overlay-hover: rgba(255, 255, 255, 0.06);
+    --pkf-backdrop: rgba(0, 0, 0, 0.7);
+
+    /* Focus */
+    --pkf-focus-ring: rgba(122, 162, 247, 0.4);
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, Inter, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+    background: var(--pkf-bg);
+    color: var(--pkf-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--pkf-primary-subtle);
+    color: var(--pkf-text-strong);
+  }
+}
+
+/* Focus utility */
+.pkf-focus {
+  outline: none;
+}
+
+.pkf-focus:focus-visible {
+  box-shadow: 0 0 0 3px var(--pkf-focus-ring);
+}
+
+/* Card utilities */
+.pkf-card {
+  border-radius: 16px;
+  background: var(--pkf-card);
+  border: 1px solid var(--pkf-border);
+}
+
+.pkf-card-interactive {
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.pkf-card-interactive:hover {
+  background: var(--pkf-card-hover);
+  transform: translateY(-1px);
+}
+
+/* Ring utility */
+.pkf-ring {
+  box-shadow: 0 0 0 1px var(--pkf-border-subtle);
+}
+
+/* Prose for readable content */
+.pkf-prose {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.pkf-prose p {
+  margin-bottom: 1rem;
+}
+
+.pkf-prose h1,
+.pkf-prose h2,
+.pkf-prose h3 {
+  color: var(--pkf-text-strong);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pkf-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pkf-border-focus);
+}
+
+/* Smooth transitions for theme changes */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
